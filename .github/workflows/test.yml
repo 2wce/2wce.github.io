@@ -15,10 +15,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "10.x"
-          TOKEN: ${{ secrets.TOKEN }}
+          GATSBY_TOKEN: ${{ secrets.TOKEN }}
 
       - run: npm ci
-      - run: npm run build
+      - run: GATSBY_TOKEN=${{ secrets.TOKEN }} npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
