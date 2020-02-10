@@ -13,8 +13,15 @@ export const Skills = () => (
       <Details>
         <h1>Hi There!</h1>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s
-          standard dummy.
+          I'm a Full Stack Developer with {new Date().getFullYear() - 2016} years experience working with{' '}
+          <b>
+            <i>JavaScript, TypeScript, ReactJS & MySQL.</i>
+          </b>{' '}
+          I also have experience working with{' '}
+          <b>
+            AWS(<i> ECS, EC2, Lambda, CodeBuild, S3 </i>)
+          </b>{' '}
+          and I hope to get certified soon 🤞🏽🤞🏽.
         </p>
         <Button as={AnchorLink} href="#contact">
           Hire me

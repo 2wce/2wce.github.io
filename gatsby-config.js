@@ -1,8 +1,11 @@
 const config = require('./src/data/config');
 
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.development`,
 });
+
+// eslint-disable-next-line no-console
+// console.log(process.env);
 
 module.exports = {
   siteMetadata: {
@@ -22,7 +25,7 @@ module.exports = {
         fieldName: 'github',
         url: 'https://api.github.com/graphql',
         headers: {
-          Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
+          Authorization: `Bearer 9848d6440ef17d7a6626e6524107765703c68cf1`,
         },
         fetchOptions: {},
       },

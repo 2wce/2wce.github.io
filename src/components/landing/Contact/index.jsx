@@ -1,8 +1,8 @@
-import React from 'react'
-import { Container } from 'components/common'
-import contact from 'assets/illustrations/contact.svg'
-import { Wrapper, Details, Thumbnail } from './styles'
-import ContactForm from './ContactForm'
+import contact from 'assets/illustrations/contact.svg';
+import { Container } from 'components/common';
+import React from 'react';
+import ContactForm from './ContactForm';
+import { Details, Thumbnail, Wrapper } from './styles';
 
 export const Contact = () => (
   <Wrapper as={Container} id="contact">
@@ -10,7 +10,7 @@ export const Contact = () => (
       <ContactForm />
     </Details>
     <Thumbnail>
-      <img src={contact} alt="I’m John and I’m a Backend & Devops engineer!" />
+      <img src={contact} alt="I’m Kudakwashe and I’m a Backend & Devops engineer!" />
     </Thumbnail>
   </Wrapper>
-)
+);

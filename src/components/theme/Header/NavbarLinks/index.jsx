@@ -7,7 +7,7 @@ const NavbarLinks = ({ desktop }) => (
     <AnchorLink href="#about">About</AnchorLink>
     <AnchorLink href="#projects">Projects</AnchorLink>
     <AnchorLink href="#contact">Contact</AnchorLink>
-    <AnchorLink href="/blog">Blog</AnchorLink>
+    <a href="https://2wce.github.io/blog">Blog</a>
   </Wrapper>
 );
 

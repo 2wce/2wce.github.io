@@ -1,25 +1,10 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Thumbnail from 'assets/thumbnail/thumbnail.png'
-import {
-  url,
-  defaultDescription,
-  social,
-  defaultTitle,
-  socialLinks,
-  address,
-  contact,
-  legalName,
-  foundingDate,
-  logo,
-} from 'data/config'
+import Thumbnail from 'assets/thumbnail/thumbnail.png';
+import { address, contact, defaultDescription, defaultTitle, foundingDate, legalName, logo, social, socialLinks, url } from 'data/config';
+import React from 'react';
+import Helmet from 'react-helmet';
 
-export const SEO = ({
-  title = defaultTitle,
-  description = defaultDescription,
-  location = '',
-}) => {
-  const structuredDataOrganization = `{ 
+export const SEO = ({ title = defaultTitle, description = defaultDescription, location = '' }) => {
+  const structuredDataOrganization = `{
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"legalName": "${legalName}",
@@ -51,7 +36,7 @@ export const SEO = ({
 			"${socialLinks.instagram}",
 			"${socialLinks.github}"
 		]
-  	}`
+  	}`;
 
   return (
     <Helmet>
@@ -76,5 +61,5 @@ export const SEO = ({
       <title>{title}</title>
       <html lang="en" dir="ltr" />
     </Helmet>
-  )
-}
+  );
+};
