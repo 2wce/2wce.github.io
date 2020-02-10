@@ -1,0 +1,35 @@
+module.exports = {
+  defaultTitle: 'Kudakwashe Mupeni',
+  logo: 'https://portfolio.smakosh.com/favicon/favicon-512.png',
+  author: 'Kudakwashe Mupeni',
+  url: 'https://2wce.github.io',
+  legalName: 'Kudakwashe Terrence Mupeni',
+  defaultDescription: 'I’m Kudakwashe and I’m a Backend & Devops engineer!',
+  socialLinks: {
+    twitter: 'http://www.twitter.com/real_kuda',
+    github: 'https://github.com/2wce',
+    linkedin: 'https://www.linkedin.com/in/tmupeni/',
+    instagram: 'https://instagram.com/#',
+    youtube: 'https://www.youtube.com/user/#',
+    google: 'https://plus.google.com/u/0/+#',
+  },
+  googleAnalyticsID: 'UA-68008101-1',
+  themeColor: '#6b63ff',
+  backgroundColor: '#6b63ff',
+  social: {
+    facebook: 'murphytwice',
+    twitter: '@real_kuda',
+  },
+  address: {
+    city: 'City',
+    region: 'Region',
+    country: 'Country',
+    zipCode: 'ZipCode',
+  },
+  contact: {
+    email: 'email',
+    phone: 'phone number',
+  },
+  foundingDate: '2018',
+  recaptcha_key: '6LeozdUUAAAAAOZgZFg_TTWqPyNwliJCdSs9Fi_o',
+};
