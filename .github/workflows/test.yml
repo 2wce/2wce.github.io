@@ -1,20 +1,28 @@
-name: CI
+name: github pages
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
+  deploy:
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - name: Gatsby Publish
-        uses: enriikke/gatsby-gh-pages-action@v2.1.1
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
         with:
-          # A personal access token needed to push your site after it has been built.
-          access-token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          # The branch expected by GitHub to have the static files needed for your site.
-          deploy-branch: master # optional, default is master
-          # Additional arguments that get passed to `gatsby build`.
-          # gatsby-args: # optional, default is
+          node-version: "10.x"
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./public
+          publish_branch: master # deploying branch
           TOKEN: ${{ secrets.TOKEN }}
