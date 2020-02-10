@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
+import axios from 'axios';
 import { Button, Input } from 'components/common';
 import { ErrorMessage, FastField, Form, withFormik } from 'formik';
 import React from 'react';
-// import Recaptcha from 'react-google-recaptcha';
 import * as Yup from 'yup';
 import { Center, Error, InputField } from './styles';
 
@@ -33,11 +33,11 @@ const ContactForm = ({ isSubmitting, values, errors, touched }) => (
         component="input"
         as={FastField}
         type="email"
-        name="email"
+        name="_replyto"
         placeholder="Email*"
-        error={touched.email && errors.email}
+        error={touched._replyto && errors._replyto}
       />
-      <ErrorMessage component={Error} name="email" />
+      <ErrorMessage component={Error} name="_replyto" />
     </InputField>
     <InputField>
       <Input
@@ -53,11 +53,11 @@ const ContactForm = ({ isSubmitting, values, errors, touched }) => (
       />
       <ErrorMessage component={Error} name="message" />
     </InputField>
-    {/* {values.name && values.email && values.message && (
+    {/* {values.name && values._replyto && values.message && (
       <InputField>
         <FastField
           component={Recaptcha}
-          sitekey={recaptcha_key}
+          sitekey="6LeozdUUAAAAAOZgZFg_TTWqPyNwliJCdSs9Fi_o"
           name="recaptcha"
           onChange={value => setFieldValue('recaptcha', value)}
         />
@@ -82,7 +82,7 @@ const ContactForm = ({ isSubmitting, values, errors, touched }) => (
 export default withFormik({
   mapPropsToValues: () => ({
     name: '',
-    email: '',
+    _replyto: '',
     message: '',
     // recaptcha: '',
     success: false,
@@ -90,22 +90,19 @@ export default withFormik({
   validationSchema: () =>
     Yup.object().shape({
       name: Yup.string().required('Full name field is required'),
-      email: Yup.string()
+      _replyto: Yup.string()
         .email('Invalid email')
         .required('Email field is required'),
       message: Yup.string().required('Message field is required'),
       // recaptcha: Yup.string().required('Robots are not welcome yet!'),
     }),
-  handleSubmit: async ({ name, email, message }, { setSubmitting, resetForm, setFieldValue }) => {
+  handleSubmit: async (data, { setSubmitting, resetForm, setFieldValue }) => {
     try {
-      await fetch('https://formspree.io/mnqdgrkr', {
+      delete data.success;
+      await axios({
         method: 'POST',
-        // headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: {
-          name,
-          email,
-          message,
-        },
+        url: 'https://formspree.io/mnqdgrkr',
+        data,
       });
       await setSubmitting(false);
       await setFieldValue('success', true);
