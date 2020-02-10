@@ -1,8 +1,6 @@
 # Portfolio for developers
 
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/new/project?template=https://github.com/smakosh/gatsby-portfolio-dev)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/57c04515-1d1b-46e8-b531-213fabca9cc4/deploy-status)](https://app.netlify.com/sites/gatsby-portfolio-dev/deploys)
+![github pages](https://github.com/2wce/2wce.github.io/workflows/github%20pages/badge.svg)
 
 ## Theme
 
