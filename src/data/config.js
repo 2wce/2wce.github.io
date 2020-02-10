@@ -21,15 +21,15 @@ module.exports = {
     twitter: '@real_kuda',
   },
   address: {
-    city: 'City',
-    region: 'Region',
-    country: 'Country',
-    zipCode: 'ZipCode',
+    city: 'Johannesburg',
+    region: 'Gauteng',
+    country: 'Soutth Africa',
+    zipCode: '2107',
   },
   contact: {
-    email: 'email',
+    email: 'kudamupeni@gmail.com',
     phone: 'phone number',
   },
-  foundingDate: '2018',
-  recaptcha_key: '6LeozdUUAAAAAOZgZFg_TTWqPyNwliJCdSs9Fi_o',
+  foundingDate: '2016',
+  recaptchaKey: '6LeozdUUAAAAAOZgZFg_TTWqPyNwliJCdSs9Fi_o',
 };

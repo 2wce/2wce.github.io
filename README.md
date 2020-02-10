@@ -15,11 +15,11 @@
 - Nice project structure
 - Amazing illustrations by [Undraw.co](https://undraw.co)
 - Tablet & mobile friendly
-- Continuous deployment with [Netlify](https://netlify.com)
+- Continuous deployment with [Github Actions](https://netlify.com)
 - A contact form protected by Google Recaptcha
 - Can be deployed with one click
 - Functional components with ~~Recompose~~ React Hooks! ~~ready to migrate to React hooks!~~
-- Fetches your Github pinned projects with most stars (You could customize this if you wish)
+- Fetches your Github pinned projects with most stars
 
 ## Design
 
@@ -58,16 +58,6 @@ GITHUB_TOKEN=xxxxxxxxxx
 
 > [Get your GitHub access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line#creating-a-token)
 
-Don't forget to edit your site's data on `data/config.js` file with your Google Recaptcha public key
-
-When deploying on Netlify, you will have to set the private key as well
-
-```bash
-SITE_RECAPTCHA_KEY=xxxxx
-
-SITE_RECAPTCHA_SECRET=xxxxx
-```
-
 I highly recommend you check this [repository](https://github.com/imorente/gatsby-netlify-form-example) for more details about the Google Recaptcha and Netlify forms
 
 ## Installing
@@ -94,7 +84,6 @@ yarn reset
 
 ## Built with
 
-- Adobe XD
 - Gatsby
 - React & GraphQL
 - VSCode
@@ -106,13 +95,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Contributors
 
-- [Ajay NS](https://github.com/ajayns) https://github.com/smakosh/gatsby-portfolio-dev/pull/3
-- [Ryan Lee](https://github.com/drdgvhbh) https://github.com/smakosh/gatsby-portfolio-dev/pull/6
-- [David](https://github.com/davidavz) https://github.com/smakosh/gatsby-portfolio-dev/pull/8
-- [Myself](https://smakosh.com)
-
-## Support
-
-If you love this Gatsby template and want to support me, you can do so through my Patreon
-
-[![Support me on Patreon](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/smakosh)
+- [Kudakwashe Mupeni](https://2wce.github.io)
