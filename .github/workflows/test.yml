@@ -15,6 +15,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "10.x"
+          TOKEN: ${{ secrets.TOKEN }}
 
       - run: npm ci
       - run: npm run build
@@ -25,4 +26,3 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./public
           publish_branch: master # deploying branch
-          TOKEN: ${{ secrets.TOKEN }}
