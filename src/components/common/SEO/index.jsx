@@ -1,8 +1,10 @@
 import Thumbnail from 'assets/thumbnail/thumbnail.png';
+// eslint-disable-next-line prettier/prettier
 import { address, contact, defaultDescription, defaultTitle, foundingDate, legalName, logo, social, socialLinks, url } from 'data/config';
 import React from 'react';
 import Helmet from 'react-helmet';
 
+// eslint-disable-next-line react/prop-types
 export const SEO = ({ title = defaultTitle, description = defaultDescription, location = '' }) => {
   const structuredDataOrganization = `{
 		"@context": "http://schema.org",

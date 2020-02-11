@@ -2,13 +2,17 @@ import dev from 'assets/illustrations/skills.svg';
 import { Button, Container } from 'components/common';
 import React from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Details, SkillsWrapper, Thumbnail, Wrapper } from './styles';
 
 export const Skills = () => (
   <Wrapper id="about">
     <SkillsWrapper as={Container}>
       <Thumbnail>
-        <img src={dev} alt="I’m Kudakwashe and I’m a Backend & Devops engineer!" />
+        <LazyLoadImage
+          alt="I’m Kudakwashe and I’m a Backend & Devops engineer!"
+          src={dev} // use normal <img> attributes as props
+        />
       </Thumbnail>
       <Details>
         <h1>Hi There!</h1>
