@@ -2,7 +2,7 @@
   "name": "portfolio",
   "private": true,
   "description": "My portfolio",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "author": "Kudakwashe Mupeni <kudamupeni@gmail.com>",
   "dependencies": {
     "axios": "^0.19.2",
