@@ -1,14 +1,17 @@
 ---
-import { getCollection } from "astro:content";
 import TagPosts from "@layouts/TagPosts.astro";
-import getPostsByTag from "@utils/getPostsByTag";
 import getPagination from "@utils/getPagination";
+import getPostsByTag from "@utils/getPostsByTag";
+import getPostsWithRT from "@utils/getPostsWithRT";
 import getUniqueTags from "@utils/getUniqueTags";
+import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
 
-  const tags = getUniqueTags(posts);
+  const postsWithRT = await getPostsWithRT(posts); // replace reading time logic with this func
+
+  const tags = getUniqueTags(postsWithRT);
 
   return tags.map(({ tag, tagName }) => {
     return {
@@ -20,7 +23,7 @@ export async function getStaticPaths() {
 
 const { tag, tagName, posts } = Astro.props;
 
-const postsByTag = getPostsByTag(posts, tag);
+const postsByTag = await getPostsByTag(posts, tag);
 
 const pagination = getPagination({
   posts: postsByTag,
