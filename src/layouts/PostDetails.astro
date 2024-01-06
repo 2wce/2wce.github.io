@@ -6,12 +6,16 @@ import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
+import TableOfContents from "@components/TableOfContents.astro";
+import type { MarkdownHeading } from "astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
+  headings?: MarkdownHeading[]
 }
 
-const { post } = Astro.props;
+const { post, headings } = Astro.props;
+
 
 const {
   title,
@@ -19,6 +23,7 @@ const {
   description,
   ogImage,
   canonicalURL,
+  readingTime,
   pubDatetime,
   modDatetime,
   tags,
@@ -46,6 +51,7 @@ const layoutProps = {
 
 <Layout {...layoutProps}>
   <Header />
+  <TableOfContents headings={headings} />
   <div class="mx-auto flex w-full max-w-3xl justify-start px-2">
     <button
       class="focus-outline mb-2 mt-8 flex hover:opacity-75"
@@ -63,6 +69,7 @@ const layoutProps = {
     <Datetime
       pubDatetime={pubDatetime}
       modDatetime={modDatetime}
+      readingTime={readingTime}
       size="lg"
       className="my-2"
     />

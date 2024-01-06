@@ -13,7 +13,8 @@ export default function Card({
   frontmatter,
   secHeading = true,
 }: Readonly<Props>) {
-  const { title, pubDatetime, modDatetime, description } = frontmatter;
+  const { title, pubDatetime, modDatetime, description, readingTime } =
+    frontmatter;
 
   const headerProps = {
     style: { viewTransitionName: slugifyStr(title) },
@@ -32,7 +33,11 @@ export default function Card({
           <h3 {...headerProps}>{title}</h3>
         )}
       </a>
-      <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime} />
+      <Datetime
+        pubDatetime={pubDatetime}
+        modDatetime={modDatetime}
+        readingTime={readingTime}
+      />
       <p>{description}</p>
     </li>
   );
