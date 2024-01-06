@@ -1,6 +1,6 @@
 ---
 author: Kudakwashe Mupeni
-pubDatetime: 2024-01-05T15:57:52.737Z
+pubDatetime: 2024-01-05T13:00:52.737Z
 title: Setting up Lucia Auth, Prisma in NextJS
 slug: setting-up-lucia-auth-prisma-in-nextjs-part-1
 featured: true
