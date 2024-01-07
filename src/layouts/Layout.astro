@@ -2,6 +2,7 @@
 import { LOCALE, SITE } from "@config";
 import "@styles/base.css";
 import { ViewTransitions } from "astro:transitions";
+import SpeedInsights from "@vercel/speed-insights"
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export interface Props {
@@ -117,13 +118,9 @@ const socialImageURL = new URL(
       gtag("config", "UA-68008101-1");
     </script>
     <script is:inline src="/toggle-theme.js"></script>
-    <script>
-      import { injectSpeedInsights } from '@vercel/speed-insights';
-      injectSpeedInsights({framework: 'astro'});
-  </script>
   </head>
   <body>
     <slot />
-
+    <SpeedInsights/>
   </body>
 </html>
