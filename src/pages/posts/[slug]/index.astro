@@ -29,8 +29,9 @@ export async function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-const { post } = Astro.props;
+const { post: propPost } = Astro.props;
 
+let post = propPost;
 const posts = await getCollection("blog");
 
 const sortedPosts = await getSortedPosts(posts);
@@ -39,6 +40,15 @@ const pagination = getPagination({
   posts: sortedPosts,
   page: slug,
 });
+
+if(!post && slug) {
+ // if post is not found, try to find it in the sorted posts
+  const foundPost = sortedPosts.find(post => post.slug === slug);
+  if(foundPost) {
+    post = foundPost;
+  }
+}
+
 ---
 
 {post ? <PostDetails post={post} /> : <Posts {...pagination} />}

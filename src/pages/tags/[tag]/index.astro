@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   return tags.map(({ tag, tagName }) => {
     return {
       params: { tag },
-      props: { tag, tagName, posts },
+      props: { tag, tagName, posts: postsWithRT },
     };
   });
 }
