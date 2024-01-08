@@ -7,8 +7,6 @@ import getPostsWithRT from "@utils/getPostsWithRT";
 import getUniqueTags from "@utils/getUniqueTags";
 import { getCollection, type CollectionEntry } from "astro:content";
 
-export const prerender = true;
-
 export interface Props {
   post: CollectionEntry<"blog">;
   tag: string;
@@ -16,22 +14,24 @@ export interface Props {
 }
 
 export async function getStaticPaths() {
-  console.log("getStaticPaths");
   const posts = await getCollection("blog");
 
   const postsWithRT = await getPostsWithRT(posts); // replace reading time logic with this func
 
-  const tags = getUniqueTags(postsWithRT);
+  const tags = getUniqueTags(posts);
 
-  return tags.flatMap(async({ tag, tagName }) => {
+  const result = await Promise.all(tags.map(async({ tag, tagName }) => {
     const tagPosts = await getPostsByTag(postsWithRT, tag);
     const totalPages = getPageNumbers(tagPosts.length);
+
 
     return totalPages.map(page => ({
       params: { tag, page },
       props: { tag, tagName },
     }));
-  });
+  }));
+
+  return result.flat();
 }
 
 const { page } = Astro.params;
