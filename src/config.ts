@@ -2,11 +2,11 @@ import type { ManifestOptions } from "vite-plugin-pwa";
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://2wce.github.io/", // replace this with your deployed domain
+  website: "https://kudamupeni.vercel.app", // replace this with your deployed domain
   author: "Kudakwashe Mupeni",
   desc: "A safe space for me to share my thoughts and ideas on topics I care about.",
   title: "Thoughts and Ramblings",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "avatar.jpeg",
   lightAndDarkMode: true,
   postPerPage: 3,
 };
