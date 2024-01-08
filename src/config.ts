@@ -48,12 +48,12 @@ export const SOCIALS: SocialObjects = [
  * Defines the configuration for PWA webmanifest.
  */
 export const manifest: Partial<ManifestOptions> = {
-  name: "Astro PWA Starter", // Change this to your website's name.
-  short_name: "Astro PWA Starter", // Change this to your website's short name.
+  name: "Thoughts and Ramblings", // Change this to your website's name.
+  short_name: "Thoughts and Ramblings", // Change this to your website's short name.
   description:
-    "Astro PWA Starter is an opionated Astro starter for building robust static websites.", // Change this to your websites description.
-  theme_color: "#30E130", // Change this to your primary color.
-  background_color: "#ffffff", // Change this to your background color.
+    "A safe space for me to share my thoughts and ideas on topics I care about.", // Change this to your websites description.
+  theme_color: "#FFFFFF",
+  background_color: "#FFFFFF",
   display: "minimal-ui",
   icons: [
     {
