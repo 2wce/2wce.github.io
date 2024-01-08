@@ -8,6 +8,7 @@ import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import TableOfContents from "@components/TableOfContents.astro";
 import type { MarkdownHeading } from "astro";
+import Comments from "@components/Comments.astro";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -93,6 +94,7 @@ const layoutProps = {
         <span>Back to Top</span>
       </button>
     </div>
+    <Comments />
   </main>
   <Footer />
 </Layout>
