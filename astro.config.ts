@@ -1,3 +1,4 @@
+import mdx from "@astrojs/mdx";
 import partytown from "@astrojs/partytown";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
@@ -13,6 +14,7 @@ import { remarkReadingTime } from "./src/utils/getReadingTime";
 export default defineConfig({
   site: SITE.website,
   integrations: [
+    mdx(),
     partytown({
       // Adds dataLayer.push as a forwarding-event.
       config: {
