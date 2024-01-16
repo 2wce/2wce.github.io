@@ -1,66 +1,78 @@
 import { getImage } from "astro:assets";
 import bunImage from "../../../assets/images/bun.svg";
-import terraformImage from "../../../assets/images/terraform.jpeg";
+import k8sImage from "../../../assets/images/kubernets.svg";
+import laraImage from "../../../assets/images/laravel.svg";
 import tsImage from "../../../assets/images/ts-logo-512.svg";
 
 const ts = await getImage({ src: tsImage });
 const bun = await getImage({ src: bunImage });
-const terraform = await getImage({ src: terraformImage });
-
-export interface Album {
-  name: string;
-  artist: string;
+const k8s = await getImage({ src: k8sImage });
+const laravel = await getImage({ src: laraImage });
+export interface Experience {
+  date?: string;
+  title: string;
+  topic: string;
   cover: string;
 }
 
-export const listenNowAlbums: Album[] = [
+export const listenNowAlbums: Experience[] = [
   {
-    name: "Typescript",
-    artist: "Advanced techniques",
+    title: "Typescript",
+    topic: "Advanced techniques",
     cover: ts.src,
   },
   {
-    name: "Bun",
-    artist: "For a custom zero dependency framework",
+    title: "Bun",
+    topic: "For a custom zero dependency framework",
     cover: bun.src,
+  },
+  {
+    title: "Laravel",
+    topic: "Dependency injection",
+    cover: laravel.src,
+  },
+  {
+    title: "Kubernetes",
+    topic: "Managing containerised applications",
+    cover: k8s.src,
   },
 ];
 
-export const madeForYouAlbums: Album[] = [
+export const madeForYouAlbums: Experience[] = [
   {
-    name: "Thinking Components",
-    artist: "Lena Logic",
-    cover:
-      "https://images.unsplash.com/photo-1615247001958-f4bc92fa6a4a?w=300&dpr=2&q=80",
+    title: "Software Engineer",
+    topic: "Contentful",
+    date: "Dec '22 - Present",
+    cover: ts.src,
   },
   {
-    name: "Functional Fury",
-    artist: "Beth Binary",
-    cover:
-      "https://images.unsplash.com/photo-1513745405825-efaf9a49315f?w=300&dpr=2&q=80",
+    title: "Engineering Lead",
+    topic: "Sovtech",
+    date: "May '21 - Dec '22",
+    cover: ts.src,
   },
   {
-    name: "React Rendezvous",
-    artist: "Ethan Byte",
-    cover:
-      "https://images.unsplash.com/photo-1614113489855-66422ad300a4?w=300&dpr=2&q=80",
+    title: "Snr. Software Engineer",
+    topic: "Sovtech",
+    date: "Apr '20 - May '21",
+    cover: ts.src,
   },
   {
-    name: "Stateful Symphony",
-    artist: "Beth Binary",
-    cover:
-      "https://images.unsplash.com/photo-1446185250204-f94591f7d702?w=300&dpr=2&q=80",
+    title: "Software Engineer",
+    topic: "Sovtech",
+    date: "Jul '18 - Apr '20",
+    cover: ts.src,
   },
   {
-    name: "Async Awakenings",
-    artist: "Nina Netcode",
-    cover:
-      "https://images.unsplash.com/photo-1468817814611-b7edf94b5d60?w=300&dpr=2&q=80",
+    title: "Snr. Software Engineer",
+    topic: "PlusAfrik",
+    date: "Mar '17 - Jan '19",
+    cover: laravel.src,
   },
   {
-    name: "The Art of Reusability",
-    artist: "Lena Logic",
-    cover:
-      "https://images.unsplash.com/photo-1490300472339-79e4adc6be4a?w=300&dpr=2&q=80",
+    title: "Software Engineer",
+    topic: "PlusAfrik",
+    date: "Feb '16 - Mar '17",
+    cover: laravel.src,
   },
 ];

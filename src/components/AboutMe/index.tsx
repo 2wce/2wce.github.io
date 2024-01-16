@@ -19,7 +19,7 @@ export const AboutMe = () => {
             <div className="flex space-x-4 pb-4">
               {listenNowAlbums.map(album => (
                 <AlbumArtwork
-                  key={album.name}
+                  key={album.title}
                   album={album}
                   className="w-[250px]"
                   aspectRatio="portrait"
@@ -32,18 +32,20 @@ export const AboutMe = () => {
           </ScrollArea>
         </div>
         <div className="mt-6 space-y-1">
-          <h2 className="text-2xl font-semibold tracking-tight">Music</h2>
+          <h2 className="text-2xl font-semibold tracking-tight">
+            Work Experience
+          </h2>
           <p className="text-sm text-muted-foreground">
-            Recent songs and albums that I've been listening to.
+            My career path so far.
           </p>
         </div>
         <Separator className="my-4" />
         <div className="relative">
-          <ScrollArea>
+          <ScrollArea className="">
             <div className="flex space-x-4 pb-4">
               {madeForYouAlbums.map(album => (
                 <AlbumArtwork
-                  key={album.name}
+                  key={album.title}
                   album={album}
                   className="w-[150px]"
                   aspectRatio="square"
